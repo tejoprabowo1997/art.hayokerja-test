@@ -1,10 +1,10 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup></script>
 
 <template>
   <div>
-    <ModuleHomePageHeaderBanner />
-    <ModuleHomePageAboutUs />
-    <LazyModuleHomePageHouseKeeper />
+    <HomePageHeaderBanner />
+    <HomePageAboutUs />
+    <HomePageHouseKeeper />
   </div>
 </template>
 

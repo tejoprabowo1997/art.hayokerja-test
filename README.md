@@ -1,10 +1,10 @@
-# Web ART HayoKerja
+# Nuxt 3 Minimal Starter
 
-Klik link [Lihat dokumentasi teknologi yang di pakai](https://nuxt.com/docs/getting-started/introduction) untuk mempelajari lebih lanjut.
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
-Pastikan anda sudah menginstall [Node.js](https://nodejs.org/en/download/), [Yarn](https://yarnpkg.com/getting-started/install), [pnpm](https://pnpm.io/installation) atau [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) di komputer anda.
+Make sure to install the dependencies:
 
 ```bash
 # npm

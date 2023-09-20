@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  devtools: { enabled: true },
   app: {
     head: {
       charset: 'utf-16',
@@ -77,30 +78,43 @@ export default defineNuxtConfig({
       mode: 'out-in',
     },
   },
-  devtools: { enabled: true },
-  css: ['~/assets/styles/css/tailwind.css', '~/assets/styles/css/main.css'],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
-  runtimeConfig: {
-    public: {
-      environmentInfo: {
-        isDevelopment: process.env.NODE_ENV === 'development',
-        isProduction: process.env.NODE_ENV === 'production',
-      },
-    },
-  },
-  // nitro: {
-  //   preset: 'firebase'
-  // },
   imports: {
     dirs: ['./stores'],
   },
-  modules: ['nuxt-icon', '@nuxt/image', '@pinia/nuxt'],
+  css: ['~/assets/styles/css/main.css'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    'nuxt-icon',
+    '@nuxt/image',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+    'nuxt-quasar-ui',
+  ],
+  tailwindcss: {
+    cssPath: '~/assets/styles/css/tailwind.css',
+    injectPosition: 'last',
+    viewer: false,
+    configPath: 'tailwind.config.ts',
+  },
   pinia: {
     autoImports: ['defineStore', 'acceptHMRUpdate'],
   },
-})
+  quasar: {
+    extras: {
+      fontIcons: ['material-icons'],
+      animations: 'all',
+    },
+    config: {
+      brand: {
+        primary: '#00602b', // Hijau Materialize
+        secondary: '#FFC107', // Kuning Materialize
+        accent: '#9C27B0', // Ungu Materialize
+        dark: '#1E1E1E', // Hitam Materialize
+        negative: '#F44336', // Merah Materialize
+        warning: '#FF9800', // Oranye Materialize
+        positive: '#027435', // Hijau Materialize
+      },
+    },
+    plugins: ['Loading', 'Notify', 'AppFullscreen', 'Dialog'],
+  },
+});
